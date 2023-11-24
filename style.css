@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#title, #description{
+    text-align: center;
+}
+label{
+    margin: 10px 5px 10px 30px;
+}
+#submit{
+    margin-left: 30px;
+    margin-bottom: 30px;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+td{
+    text-wrap: wrap;
+}
