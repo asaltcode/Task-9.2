@@ -126,7 +126,7 @@ form.append(
 let hr = document.createElement("hr");
 
 //___________________________________________________________________________________________________________________
-const tableDiv = elements("div", "", "", "");
+const tableDiv = elements("div", "tableDiv", "", "");
 const detailTable = elements("table", "table", "", "");
 const tHead = elements("thead", "", "", "");
 const tBody = elements("tbody", "", "", "");
@@ -171,18 +171,11 @@ let State = document.getElementById("state");
 let Country = document.getElementById("country");
 // let firstName = document.getElementById("first-name")
 
-
-
-let bodyTr = document.getElementById("bodyTr")
+let bodyTr = document.getElementById("bodyTr");
 // bodyTr.children(list.remove(td))
 
+console.log(bodyTr.childNodes);
 formFild.addEventListener("submit", (e) => {
-  // if(bodyTr.firstChild.tagName == "TD"){
-  //   bodyTr.children(list.remove(td))
-
-  // }
-  
-
   e.preventDefault();
   //this code more selections find
   let selected = [];
@@ -191,27 +184,14 @@ formFild.addEventListener("submit", (e) => {
       selected.push(option.value);
     }
   }
+  bodyTr.innerHTML = `<td>${firstName.value}</td>
+  <td>${lastName.value}</td>
+  <td>${Address.value}</td>
+  <td>${Pincode.value}</td>
+  <td>${Gender.value}</td>
+  <td>${selected.join(", ")}</td>
+  <td>${State.value}</td>
+  <td>${Country.value}</td>`;
 
-  let allDetail = [];//Tabel values assign
-  allDetail[0] = firstName.value;
-  allDetail[1] = lastName.value;
-  allDetail[2] = Address.value;
-  allDetail[3] = Pincode.value;
-  allDetail[4] = Gender.value;
-  allDetail[5] = selected.join(", ");
-  allDetail[6] = State.value;
-  allDetail[7] = Country.value;
-
-  function personDetails(detail) {//values parss
-    let td = document.createElement("td");
-    td.innerText = detail;
-    return td;
-  }
-  for (r of allDetail) {
-    trBody.append(personDetails(r));
-  }
   form.reset();
-
-
- 
 });
