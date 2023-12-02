@@ -174,7 +174,6 @@ let Country = document.getElementById("country");
 let bodyTr = document.getElementById("bodyTr");
 // bodyTr.children(list.remove(td))
 
-console.log(bodyTr.childNodes);
 formFild.addEventListener("submit", (e) => {
   e.preventDefault();
   //this code more selections find
